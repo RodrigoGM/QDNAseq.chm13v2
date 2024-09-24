@@ -1,13 +1,17 @@
 Package: QDNAseq.chm13v2
 Title: QDNAseq.chm13v2: QDNAseq bin annotations for T2T CHM13v2
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+Authors@R: person("Rodrigo Gularte Merida",
+	   role = c("aut", "cre"),
+	   email = "gularter@mskcc.org")
+Author: Rodrigo Gularte Merida [aut, cre]
+Maintainer: Rodrigo Gularte Merida <gularter@mskcc.org> 
 Description: Provides bin annotations for copy number analysis using the T2T CHM13v2 assembly.
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
+URL: https://github.com/RodrigoGM/QDNAseq.chm13v2
+BugReports: https://github.com/RodrigoGM/QDNAseq.chm13v2/issues
 RoxygenNote: 7.3.1
 Suggests: 
     dplyr

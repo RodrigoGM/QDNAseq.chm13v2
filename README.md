@@ -6,7 +6,7 @@
 
 We provide bin indices to use with QDNAseq at 10, 20, 50, 100, 150, 200, and 500 Kb for the T2T CHM13v2 assembly.  The annotations were created based on the steps from the [QDNAseq vignette](https://bioconductor.org/packages/release/bioc/html/QDNAseq.html), and [QDNAseq.hg38](https://github.com/asntech/QDNAseq.hg38).
 
-**NOTE:  Bins are still experimental and are pending variance estimation with 1000 Genomes Samples, Genomes are currently being downloaded and aligned**
+**NOTE:  Bins are still experimental and are pending variance estimation with 1000 Genomes Samples. Genomes are currently being downloaded and aligned**
 
 ## Installation
 
@@ -53,7 +53,7 @@ for i in 50 100 150 ; do
 done
 ```
 
-### 3. Exclude Regions
+### 3. Excluded Regions
 Exclude regions were obtained from R/Bioconductor [ExcludeRanges](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10126321/) package, [here](https://drive.google.com/drive/folders/1sF9m8Y3eZouTZ3IEEywjs2kfHOWFBSJT).
 
 ## 4. Preparing Bins

@@ -132,7 +132,7 @@ for(k in names(kmers)) {
                     strsplit(mappability, "\t"))) %>%
             transform(row.names = V1, V1 = NULL) %>%
             rename("mappability" = "V2")
-			bins$mappability <- mappability[rownames(bins), "mappability"]
+	bins$mappability <- mappability[rownames(bins), "mappability"]
 
         ## estimate % overap to exclude list
         bins$blacklist <- calculateBlacklist(

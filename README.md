@@ -16,7 +16,7 @@ We provide bin indices to use with QDNAseq at 10, 20, 50, 100, 150, 200, and 500
 You can install the development version of QDNAseq.chm13v2 like so:
 
 ``` r
-# devtools::install_github("QDNAseq.chm13v2", dependencies = TRUE)
+devtools::install_github("RodrigoGM/QDNAseq.chm13v2", dependencies = TRUE)
 ```
 
 ## Steps to generate bins

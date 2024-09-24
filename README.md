@@ -9,7 +9,7 @@ status](https://github.com/r-lib/usethis/workflows/R-CMD-check/badge.svg)](https
 
 We provide bin indices to use with QDNAseq at 10, 20, 50, 100, 150, 200, and 500 Kb for the T2T CHM13v2 assembly.  The annotations were created based on the steps from the [QDNAseq vignette](https://bioconductor.org/packages/release/bioc/html/QDNAseq.html), and [QDNAseq.hg38](https://github.com/asntech/QDNAseq.hg38).
 
-**NOTE:  Bins are pending variance estimation with 1000 Genomes Samples. Genomes are currently being downloaded and aligned**
+**NOTE:  Bins are pending residual variance estimation with 1000 Genomes Samples. Genomes are currently being downloaded and aligned**
 
 ## Installation
 

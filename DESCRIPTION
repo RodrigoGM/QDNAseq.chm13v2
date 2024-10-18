@@ -1,6 +1,6 @@
 Package: QDNAseq.chm13v2
 Title: QDNAseq.chm13v2: QDNAseq bin annotations for T2T CHM13v2
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: person("Rodrigo Gularte Merida",
 	   role = c("aut", "cre"),
 	   email = "gularter@mskcc.org")
@@ -19,5 +19,6 @@ Depends:
     QDNAseq,
     R (>= 2.10)
 LazyData: true
+LazyDataCompression: xz
 Imports: 
     Biobase

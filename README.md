@@ -100,7 +100,7 @@ samtools index -@ 20 ${SAMPLE}.chm13v2.PE.md.bam
 
 #### Table 1.  Samples downloaded for bin residual estimation.
 | Sample       | Accession  |
-| ------------ | ---------- |
+|:-------------|:-----------|
 | HG00126      | ERR1025620 |
 | HG00128      | ERR1347661 |
 | HG00190      | ERR1346534 |

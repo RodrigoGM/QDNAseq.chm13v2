@@ -12,7 +12,7 @@ A annotated data frame with pre-calcuated metrics for each bin describing:
 \item{end}{Binend position}
 \item{bases}{Percentage of non-N nucleotides acros the full bin}
 \item{gc}{Percentage of C and G nucleotides \(of non-N nucleotides\)}
-\item{mappability}{Average mappability of  with a maximum of 2 mismatches}
+\item{mappability}{Average mappability of 50kbp with a maximum of 2 mismatches}
 \item{blacklist}{Percent overlap with High-Signal regions from ExcludeRanges}
 \item{residual}{Median loess residual from 1000 genomes \strong{PENDING}}
 \item{use}{Weather bin exceeds minimum thresholds for analysis}
@@ -25,7 +25,7 @@ A annotated data frame with pre-calcuated metrics for each bin describing:
 data(chm13v2.50kbp.SR50)
 }
 \description{
-Bin annotations for kbp using  reads
+Bin annotations for 50kbpkbp using SR50 reads
 }
 \author{
 RGM

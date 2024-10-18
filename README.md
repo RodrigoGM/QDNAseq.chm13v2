@@ -9,16 +9,19 @@ status](https://github.com/r-lib/usethis/workflows/R-CMD-check/badge.svg)](https
 
 We provide bin indices to use with QDNAseq at 10, 20, 50, 100, 150, 200, and 500 Kb for the T2T CHM13v2 assembly.  The annotations were created based on the steps from the [QDNAseq vignette](https://bioconductor.org/packages/release/bioc/html/QDNAseq.html), and [QDNAseq.hg38](https://github.com/asntech/QDNAseq.hg38).
 
+
 **NOTE:  PE100 residuals have now been estimated"
 
 **NOTE:  SR50 bins are pending residual variance estimation with 1000 Genomes Samples. Genomes are currently being downloaded and aligned**
+
+--- 
 
 ## Installation
 
 You can install the development version of QDNAseq.chm13v2 like so:
 
 ``` r
-# devtools::install_github("QDNAseq.chm13v2", dependencies = TRUE)
+devtools::install_github("RodrigoGM/QDNAseq.chm13v2", dependencies = TRUE)
 ```
 
 ## Steps to generate bins
@@ -213,21 +216,26 @@ for(k in names(kmers[2])) {
         bigWigAvgOB <- file.path("bigWigAverageOverBed")
 
         message(t2t.mp.bigwig)
-        ## there was a bug in the calculateMappability, thus
-        ## computing directly and reading in file
-        ## compute mapability per bin
-        ## mappability.file <- paste0("chm13v2.", binsize, "kbp.", k, ".bed")
+        ## There was a bug in the calculateMappability, thus
+        ## computing directly 
+		
+		## comand line construction
         cmd <- paste(bigWigAvgOB, t2t.mp.bigwig, bed.file,
                      "stdout | cut -f 1,5 ")
+					 
+		## run cmd, internalize ouptut, and convert to data.frame
         mappability <- system(cmd, intern = TRUE)
         mappability <- as.data.frame(
             do.call(rbind,
                     strsplit(mappability, "\t"))) %>%
             transform(row.names = V1, V1 = NULL) %>%
-            rename("mappability" = "V2")                    
+            rename("mappability" = "V2")
+			
+        ## coerce output to numberic, and convert to percent
         bins$mappability <- as.numeric(
             mappability[rownames(bins), "mappability"]) * 100
 
+	    ## coerce GC content to numeric
         bins$gc <- as.numeric(bins$gc)
 
         ## estimate % overap to exclude list
@@ -247,9 +255,11 @@ for(k in names(kmers[2])) {
                             cache=TRUE,
                             isPaired = TRUE,
                             pairedEnds = TRUE)
-
+							
+	    ## estimate residuals
         bins$residual <- iterateResiduals(tg)
-
+		
+		## convert to annotated data frame
         bins <- AnnotatedDataFrame(
             bins,
             varMetadata = data.frame(
@@ -266,6 +276,7 @@ for(k in names(kmers[2])) {
                     "Whether the bin should be used in subsequent analysis steps"),
                 row.names = colnames(bins)))
 
+ 	    ## metadata
         QDNAseqInfo <- list(
             author="Rodrigo Gularte Merida",
             date=Sys.time(),

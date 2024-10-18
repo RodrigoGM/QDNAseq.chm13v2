@@ -59,9 +59,9 @@ done
 ```
 
 ### 3. 1000 Genomes used for residual estimation
-Residual estimation was performed on 38 genomes from the [Simmons Genome Diversity Project](https://www.simonsfoundation.org/simons-genome-diversity-project/) (Table 1).  Sequences were obtained via [1000 Genomes Project](https://www.internationalgenome.org) Data Portal in accord to the [data resuse policy](http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/simons_diversity_data/README_Simons_diversity_datareuse_statement.md).  The manifest used to automate is stored in the package and can be accesed via `data(used.fastq.manifest)`.
+Residual estimation was performed on 38 genomes from the [Simmons Genome Diversity Project](https://www.simonsfoundation.org/simons-genome-diversity-project/) of the [1000 Genomes Project](https://www.internationalgenome.org) via the Data Portal in accord to the [data resuse policy](http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/simons_diversity_data/README_Simons_diversity_datareuse_statement.md) (Table 1).  The manifest used to automate the data download is stored in the package, and can be accesed via `data(used.fastq.manifest)`.
 
-Genomes were aligned to the `t2t_chm13v2.vd1.fa` assembly using [bwa](https://github.com/lh3/bwa), sorted by [samtools sort](https://github.com/samtools/samtools), and duplicates marked using [Picard MarkDuplicates](https://github.com/broadinstitute/picard), as follows:
+For PE100 Genomes were aligned to the `t2t_chm13v2.vd1.fa` assembly using [bwa](https://github.com/lh3/bwa), sorted by [samtools sort](https://github.com/samtools/samtools), and duplicates marked using [Picard MarkDuplicates](https://github.com/broadinstitute/picard), briefly:
 
 ```bash
 ## Main Alignment
